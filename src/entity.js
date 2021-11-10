@@ -23,6 +23,8 @@ export class Entity {
       entityToAttack.isAlive = false;
     }
   }
+
+  
 }
 
 export class Player extends Entity{
@@ -39,5 +41,9 @@ export class Player extends Entity{
         break;
     }
     this.jobClass = jobClass;
+  }
+
+  gainXP(xpAmount){
+    this.stats.set("XP", this.stats.get("XP") + xpAmount);
   }
 }

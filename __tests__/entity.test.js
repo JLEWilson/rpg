@@ -40,5 +40,10 @@ describe('Player (extends Entity)', () => {
     expect(player1.stats.get("HP")).toBeDefined();
     expect(player1.stats.get("XP")).toBeDefined();
   });
-  
+  test('gain xp method should take in an xp value and add it to the players xp', () => {
+    const player1 = new Player("Gary the Bloodless", 'wizard');
+    player1.gainXP(5);
+    expect(player1.stats.get("XP")).toEqual(5);
+  });
+
 });
