@@ -40,17 +40,31 @@ export class Player extends Entity {
       case "rogue":
         super(4,3,5,0,name);
         break;
+      default:
+        super(0,0,0,0,name);
     }
     this.jobClass = jobClass;
+    this.xpArray = [2, 5, 9, 14, 20];
   }
 
   gainXP(xpAmount) {
     this.stats.set("XP", this.stats.get("XP") + xpAmount);
+    if (this.stats.get("XP") >= this.xpArray[0]){
+      this.xpArray.shift();
+      this.gainLevel();
+    }
   }
 
   healHP(hpAmount) {
     let healedAmount = Math.min(this.stats.get("HP") + hpAmount, this.stats.get("MaxHP"))
     this.stats.set("HP", healedAmount);
+  }
+
+  gainLevel() {
+    this.stats.set("AP", this.stats.get("AP") + 1);
+    this.stats.set("DP", this.stats.get("DP") + 1);
+    this.stats.set("MaxHP", this.stats.get("MaxHP") + 1);
+    this.stats.set("HP", this.stats.get("MaxHP"));
   }
 }
 
@@ -66,6 +80,8 @@ export class Enemy extends Entity{
       case "giant rat":
         super(4, 2, 4, 2, name);
         break;
+      default:
+        super(0, 0, 0, 0, name);
     }
   }
 }

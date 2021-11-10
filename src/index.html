@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <title>RPG</title>
+</head>
+<body>
+  <div class="container">
+    <div class="flex-container">
+      <div class="box1">
+        <div class="card character-create">
+          <form id="character-create-form">
+            <label for="charName">Name your character</label>
+            <input type="text" name="charName" id="charName" maxlength="16" required></textarea>
+            <div class="class-radio">
+              <p id="class-label">Select your class</p>
+              <label><input type="radio" name="class-radio" value="wizard" checked>Wizard</label>
+              <label><input type="radio" name="class-radio" value="warrior" >Warrior</label>
+              <label><input type="radio" name="class-radio" value="rogue" >Wrogue</label>
+            </div>
+            <br>
+            <button type="submit">Create</button>
+          </form>
+        </div>
+
+        <div class="card story-action">
+          <button type='button' class="btn btn-dark">Left</button>
+          <button type='button' class="btn btn-dark">Right</button>
+        </div>
+        <div class="card battle-action">
+          <button id="attack" type='button' class="btn btn-dark">Attack</button>
+          <button id="heal" type='button' class="btn btn-dark">Heal</button>
+        </div>
+      </div>
+      <div class="box2">
+        <div class="card">
+          <div class='story-area' >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

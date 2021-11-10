@@ -1,0 +1,36 @@
+.flex-container{
+  display: flex;
+  margin-top: 25%;
+}
+.box1{
+  flex: 1;
+  order: 1;
+  margin-right: 1em;
+}
+.box2{
+  flex: 2;
+  order: 2;
+}
+.character-create{
+  height: 10em;
+}
+.class-radio{
+  display: inline;
+  margin-top: 2em;
+}
+#class-label{
+  margin-bottom: 0%;
+  padding-bottom: 0%;
+}
+.story-action{
+  display: none;
+  height: 10em;
+}
+.battle-action{
+  display: none;
+  height: 10em;
+}
+.story-area{
+  overflow-y: auto;
+  height: 10em;
+}
