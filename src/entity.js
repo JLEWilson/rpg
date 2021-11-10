@@ -5,6 +5,7 @@ export class Entity {
         ["AP", att],
         ["DP", def],
         ["HP", health],
+        ["MaxHP", health],
         ["XP", exp]
       ]
     );
@@ -27,7 +28,7 @@ export class Entity {
   
 }
 
-export class Player extends Entity{
+export class Player extends Entity {
   constructor(name, jobClass) {
     switch(jobClass) {
       case "wizard":
@@ -43,8 +44,12 @@ export class Player extends Entity{
     this.jobClass = jobClass;
   }
 
-  gainXP(xpAmount){
+  gainXP(xpAmount) {
     this.stats.set("XP", this.stats.get("XP") + xpAmount);
+  }
+
+  healHP(hpAmount) {
+
   }
 }
 

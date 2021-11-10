@@ -40,11 +40,18 @@ describe('Player (extends Entity)', () => {
     expect(player1.stats.get("HP")).toBeDefined();
     expect(player1.stats.get("XP")).toBeDefined();
   });
-  test('gain xp method should take in an xp value and add it to the players xp', () => {
+  test('gainXP method should take in an xp value and add it to the player\'s xp', () => {
     const player1 = new Player("Gary the Bloodless", 'wizard');
     player1.gainXP(5);
     expect(player1.stats.get("XP")).toEqual(5);
   });
+
+  test('healHP method should take in a number and add it to the player\'s HP', () => {
+    const player1 = new Player("Jeff Jeff the Dweeb", 'rogue');
+    player1.stats.set("HP", 1);
+    player1.healHP(3);
+    expect(player1.stats.get("HP")).toEqual(4);
+  })
 });
 
 describe('Enemy (extends Entity', () => {
