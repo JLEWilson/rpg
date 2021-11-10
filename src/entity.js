@@ -8,6 +8,9 @@ export default class Entity {
         ["XP", exp]
       ]
     );
+  }
 
+  attack(entityToAttack) {
+    
   }
 }

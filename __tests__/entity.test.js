@@ -8,4 +8,11 @@ describe('Entity', () => {
     expect(entity.stats.get("HP")).toEqual(3);
     expect(entity.stats.get("XP")).toEqual(4);
   });
+
+  test('attack method should lower HP of another entity by AP-DP', () => {
+    const playerEntity = new Entity(2, 2, 2, 2);
+    const enemyEntity = new Entity(1, 1, 3, 1);
+    playerEntity.attack(enemyEntity);
+    expect(enemyEntity.stats.get("HP")).toEqual(2);
+  });
 });
