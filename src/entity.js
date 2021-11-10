@@ -9,6 +9,7 @@ export class Entity {
       ]
     );
     this.name = name;
+    this.isAlive = true;
   }
 
   attack(entityToAttack) {

@@ -22,6 +22,12 @@ describe('Entity', () => {
     playerEntity.attack(enemyEntity);
     expect(enemyEntity.stats.get("HP")).toEqual(3);
   });
+  test("should set enemy.isAlive to false if target hp is below 1", () =>{
+    const playerEntity = new Entity(2, 2, 2, 2);
+    const enemyEntity = new Entity(1, 1, 1, 1);
+    playerEntity.attack(enemyEntity);
+    expect(enemyEntity.isAlive).toEqual(false);
+  });
 });
 
 describe('Player (extends Entity)', () => {
