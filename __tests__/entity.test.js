@@ -1,4 +1,4 @@
-import Entity from "../src/entity";
+import {Entity, Player} from "../src/entity";
 
 describe('Entity', () => {
   test('should create an object which stores 4 stats in a map: AP, DP, HP, XP', () => {
@@ -15,4 +15,17 @@ describe('Entity', () => {
     playerEntity.attack(enemyEntity);
     expect(enemyEntity.stats.get("HP")).toEqual(2);
   });
+});
+
+describe('Player (extends Entity)', () => {
+  test('should take a name and class to create a player object with all the stats of entity as well as a class', () => {
+    const player1 = new Player("Gary the Bloodless", 'wizard');
+    expect(player1.name).toEqual("Gary the Bloodless");
+    expect(player1.jobClass).toEqual("wizard");
+    expect(player1.stats.get("AP")).toBeDefined();
+    expect(player1.stats.get("DP")).toBeDefined();
+    expect(player1.stats.get("HP")).toBeDefined();
+    expect(player1.stats.get("XP")).toBeDefined();
+  });
+  
 });

@@ -1,5 +1,5 @@
-export default class Entity {
-  constructor(att, def, health, exp) {
+export class Entity {
+  constructor(att, def, health, exp, name) {
     this.stats = new Map(
       [
         ["AP", att],
@@ -8,6 +8,7 @@ export default class Entity {
         ["XP", exp]
       ]
     );
+    this.name = name;
   }
 
   attack(entityToAttack) {
@@ -15,5 +16,23 @@ export default class Entity {
     let targetDP = entityToAttack.stats.get("DP");
     
     entityToAttack.stats.set("HP", targetHP - (this.stats.get("AP") - targetDP));
+  }
+
+}
+
+export class Player extends Entity{
+  constructor(name, jobClass) {
+    switch(jobClass) {
+      case "wizard":
+        super(5,3,2,0,name);
+        break;
+      case "warrior":
+        super(2,3,5,0,name);
+        break;
+      case "rogue":
+        super(3,5,2,0,name);
+        break;
+    }
+    this.jobClass = jobClass;
   }
 }
