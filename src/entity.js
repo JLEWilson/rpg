@@ -19,6 +19,9 @@ export class Entity {
     if (att > targetDP) {
       entityToAttack.stats.set("HP", targetHP - (att - targetDP));
     }
+    if (entityToAttack.stats.get("HP") < 1) {
+      entityToAttack.isAlive = false;
+    }
   }
 }
 
