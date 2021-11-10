@@ -1,4 +1,4 @@
-import {Entity, Player} from "../src/entity";
+import {Enemy, Entity, Player} from "../src/entity";
 
 describe('Entity', () => {
   test('should create an object which stores 4 stats in a map: AP, DP, HP, XP', () => {
@@ -45,5 +45,12 @@ describe('Player (extends Entity)', () => {
     player1.gainXP(5);
     expect(player1.stats.get("XP")).toEqual(5);
   });
+});
 
+describe('Enemy (extends Entity', () => {
+  const enemy = new Enemy("goblin");
+  expect(enemy.stats.get("AP")).toBeDefined();
+  expect(enemy.stats.get("DP")).toBeDefined();
+  expect(enemy.stats.get("HP")).toBeDefined();
+  expect(enemy.stats.get("XP")).toBeDefined();
 });

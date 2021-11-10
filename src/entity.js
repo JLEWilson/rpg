@@ -47,3 +47,9 @@ export class Player extends Entity{
     this.stats.set("XP", this.stats.get("XP") + xpAmount);
   }
 }
+
+export class Enemy extends Entity{
+  constructor(name){
+    
+  }
+}
