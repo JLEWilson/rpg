@@ -52,6 +52,13 @@ describe('Player (extends Entity)', () => {
     player1.healHP(3);
     expect(player1.stats.get("HP")).toEqual(4);
   })
+
+  test('healHP method should not heal past maxHP', () => {
+    const player1 = new Player("Jeff Jeff the Dweeb", 'rogue');
+    player1.stats.set("HP", 1);
+    player1.healHP(30);
+    expect(player1.stats.get("HP")).toEqual(5);
+  })
 });
 
 describe('Enemy (extends Entity', () => {

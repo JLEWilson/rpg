@@ -49,7 +49,8 @@ export class Player extends Entity {
   }
 
   healHP(hpAmount) {
-
+    let healedAmount = Math.min(this.stats.get("HP") + hpAmount, this.stats.get("MaxHP"))
+    this.stats.set("HP", healedAmount);
   }
 }
 
