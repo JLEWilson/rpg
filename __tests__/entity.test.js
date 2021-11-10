@@ -48,9 +48,12 @@ describe('Player (extends Entity)', () => {
 });
 
 describe('Enemy (extends Entity', () => {
+  test('should create an enemy object with stats defined by name', () => {
   const enemy = new Enemy("goblin");
   expect(enemy.stats.get("AP")).toBeDefined();
   expect(enemy.stats.get("DP")).toBeDefined();
   expect(enemy.stats.get("HP")).toBeDefined();
   expect(enemy.stats.get("XP")).toBeDefined();
+
+  });
 });

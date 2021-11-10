@@ -31,13 +31,13 @@ export class Player extends Entity{
   constructor(name, jobClass) {
     switch(jobClass) {
       case "wizard":
-        super(5,3,2,0,name);
+        super(5,1,5,0,name);
         break;
       case "warrior":
-        super(2,3,5,0,name);
+        super(3,2,8,0,name);
         break;
       case "rogue":
-        super(3,5,2,0,name);
+        super(4,3,5,0,name);
         break;
     }
     this.jobClass = jobClass;
@@ -50,6 +50,16 @@ export class Player extends Entity{
 
 export class Enemy extends Entity{
   constructor(name){
-    
+    switch (name){
+      case "goblin":
+        super(5, 1, 4, 2, name);
+        break;
+      case "slime":
+        super(3, 3, 4, 2, name);
+        break;
+      case "giant rat":
+        super(4, 2, 4, 2, name);
+        break;
+    }
   }
 }
