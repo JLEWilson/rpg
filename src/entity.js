@@ -11,6 +11,9 @@ export default class Entity {
   }
 
   attack(entityToAttack) {
+    let targetHP = entityToAttack.stats.get("HP");
+    let targetDP = entityToAttack.stats.get("DP");
     
+    entityToAttack.stats.set("HP", targetHP - (this.stats.get("AP") - targetDP));
   }
 }
