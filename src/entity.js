@@ -14,10 +14,11 @@ export class Entity {
   attack(entityToAttack) {
     let targetHP = entityToAttack.stats.get("HP");
     let targetDP = entityToAttack.stats.get("DP");
-    
-    entityToAttack.stats.set("HP", targetHP - (this.stats.get("AP") - targetDP));
+    let att = this.stats.get("AP");
+    if (att > targetDP) {
+      entityToAttack.stats.set("HP", targetHP - (att - targetDP));
+    }
   }
-
 }
 
 export class Player extends Entity{

@@ -15,6 +15,13 @@ describe('Entity', () => {
     playerEntity.attack(enemyEntity);
     expect(enemyEntity.stats.get("HP")).toEqual(2);
   });
+
+  test('attack method should not add HP if targetDP > attack', () => {
+    const playerEntity = new Entity(2, 2, 2, 2);
+    const enemyEntity = new Entity(1, 3, 3, 1);
+    playerEntity.attack(enemyEntity);
+    expect(enemyEntity.stats.get("HP")).toEqual(3);
+  });
 });
 
 describe('Player (extends Entity)', () => {
